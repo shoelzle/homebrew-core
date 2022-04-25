@@ -1,27 +1,18 @@
 class Yq < Formula
   desc "Process YAML documents from the CLI"
   homepage "https://github.com/mikefarah/yq"
-  url "https://github.com/mikefarah/yq/archive/v4.24.5.tar.gz"
-  sha256 "8ffab12d2d527f0ac62823777201f8e5e78c9af5c754914274db2733da98c796"
+  url "https://github.com/mikefarah/yq/archive/v4.4.0.tar.gz"
+  sha256 "bd87dad46efbe333d0ed2da0b142e429833259d02d6310d97c95704ea0430a83"
   license "MIT"
   head "https://github.com/mikefarah/yq.git", branch: "master"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   bottle do
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "3fc9b1d59f24581951558ef8fd544f4e48ace2d459787fe5da8bc226cb52b44f"
-    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "1b1ad4bbba155bbeaf4e490d020d112e69388c076dceed9c574303fc009b3979"
-    sha256 cellar: :any_skip_relocation, monterey:       "3fd6ea80cf85413b429eef0de7b904859396c12107c42309797346f0ec44d980"
-    sha256 cellar: :any_skip_relocation, big_sur:        "1cacaa1e83ffc595dad3b02838ee017ea76f93901196d9995c23e2ae7c79247a"
-    sha256 cellar: :any_skip_relocation, catalina:       "eae4d9570b589dcb436703670d4ff0cdff43e58848aeca1eafd617d45aa81efd"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "c5e09f4a7ee45ed444c9e05f86b54e11487a89331442c092c83de17304d1a8a0"
+    sha256 cellar: :any_skip_relocation, arm64_big_sur:  "fa0e24c4577a96caadad725096c3df00867a208fcf29b7f2fc08086084ea530d"
+    sha256 cellar: :any_skip_relocation, big_sur:        "5619ac0ef0ad093218c393fc2ca52aea3839a136cc1bbf1b109c71f090a85393"
+    sha256 cellar: :any_skip_relocation, catalina:       "d3e295cdef6093bca1e10b4ee734469679c88abe9321743a441174638222f4f7"
   end
 
   depends_on "go" => :build
-  depends_on "pandoc" => :build
 
   conflicts_with "python-yq", because: "both install `yq` executables"
 
